@@ -6,13 +6,13 @@ import ToDOlists from './list';
 function App() {
   const [inputList,setInputList]= useState("")
   const [Items,setItems] =useState([]);
-  
+
   const itemEvent= (event)=> {
     setInputList(event.target.value);
   };
   const listOfItems= ()=> {
-    setItems((oldItems) =>{
-      return [...oldItems, inputList]
+    setItems((oldItems) =>{ 
+      return [...oldItems, inputList] 
     });
     setInputList('');
   };
@@ -24,11 +24,10 @@ function App() {
       })
     })
   };
-const deleteAll=()=>{
-  setInputList('');
-}
-
-  return (
+  const clearall=()=>{
+    setItems([])
+  }
+return(
     <>
     <div className='main_div'>
         <div className="centre_div">
@@ -37,8 +36,8 @@ const deleteAll=()=>{
               <input className='inp' type='text' placeholder='Add Item' onChange={itemEvent}
               value={inputList}      />
               <button onClick={listOfItems}> + </button>
+              <button onClick={clearall}> clear all </button>
                 <ol>
-                  {/* {<li>{inputList}</li>} */}
                   {
                     Items.map((intemval,index ) =>{
                       return <ToDOlists key={index} id={index} text={intemval} onSelect={deleteItems} />
