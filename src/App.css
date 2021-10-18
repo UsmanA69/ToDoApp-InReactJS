@@ -32,10 +32,14 @@ button{
 }
 button:hover{
   background: grey;
-  border-radius: 40%;
+  border-radius: 40px;
   transition: 2s;
 }
-.dltbtn:hover{
+.dltbtn:hover ,.clearall:hover{
   /* border: 1px solid black; */
+  border-radius: 20px;
+}
+.clearall{
+  border: 1px solid black;
   border-radius: 20px;
 }
