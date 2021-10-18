@@ -35,9 +35,9 @@ return(
               <br />
               <input className='inp' type='text' placeholder='Add Item' onChange={itemEvent}
               value={inputList}      />
-              <button onClick={listOfItems}> + </button>
-              <button onClick={clearall}> clear all </button>
-                <ol>
+              <button style={{marginRight:5,marginLeft:5}} onClick={listOfItems}> + </button>
+              <button className='clearall' onClick={clearall}> clear all </button>
+                <ol>   
                   {
                     Items.map((intemval,index ) =>{
                       return <ToDOlists key={index} id={index} text={intemval} onSelect={deleteItems} />
